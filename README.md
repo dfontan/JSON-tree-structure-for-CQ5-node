@@ -1,6 +1,5 @@
 JSON-tree-structure-for-CQ5-node
 ================================
-	int counterChildren = 0;
     public String getJsonTreeBuilder(boolean topLeafBuilder, StringBuilder builders, Node node) throws RepositoryException, IOException {
 
     	if (topLeafBuilder) builders.append("["); //start of json array, to be added once
