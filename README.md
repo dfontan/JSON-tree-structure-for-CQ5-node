@@ -27,7 +27,7 @@ Generate JSON tree structure from cq5 content node. Given CQ5 content path, the 
                                        log.info("pageFilter name is :"+page.getName());
                                        topLeafBuilder = false;
                                        getJsonTreeBuilder(page); // recursive call to n depth of node
-                                       if(pages.hasNext() && (counterChildren != 0 && page.getProperty("jcr:primaryType").getString().equals("cq:Page"))) {//end of json objec, append comma
+                                       if(pages.hasNext() && (counterChildren != 0 && page.getProperty("jcr:primaryType").getString().equals("cq:Page"))) {//end of json object, append comma
                                           builders.append(",");     
      
                                      }
