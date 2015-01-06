@@ -8,7 +8,7 @@ Generate JSON tree structure from cq5 content node. Given CQ5 content path, the 
         
         int counterChildren = 0;
         boolean topLeafBuilder = true;
-        public String getJsonTreeBuilder(StringBuilder builders, Node node) throws RepositoryException, IOException{ 
+        public String getJsonTreeBuilder(boolean topLeafBuilder, StringBuilder builders, Node node) throws RepositoryException, IOException{ 
 
                 if(topLeafBuilder)
                  builders.append("[");//start of json array, to be added once
@@ -27,7 +27,7 @@ Generate JSON tree structure from cq5 content node. Given CQ5 content path, the 
   
                                        log.info("pageFilter name is :"+page.getName());
                                        topLeafBuilder = false;
-                                       getJsonTreeBuilder(page); // recursive call to n depth of node
+                                       getJsonTreeBuilder(topLeafBuilder, builders, page); // recursive call to n depth of node
                                        if(pages.hasNext() && (counterChildren != 0 && page.getProperty("jcr:primaryType").getString().equals("cq:Page"))) {//end of json object, append comma
                                           builders.append(",");     
      
